@@ -1,3 +1,60 @@
+html, body {
+    /* FIX: The ultimate fix for the white space at the top */
+    margin: 0;
+    padding: 0;
+    
+    /* Smooth scrolling for all anchor links */
+    scroll-behavior: smooth; 
+}
+
+/* Base body styles */
+body {
+    box-sizing: border-box;
+    min-width: 360px;
+    max-width: 430px;
+    margin: 0 auto; 
+    font-family: 'Phudu', cursive;
+}
+
+/* Font styles moved from inline HTML <style> */
+.slogan p, #about p, p {
+    font-family: 'lora', serif;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* 2. STICKY NAV - Floating Initial State (on the Hero Section) */
+.header {
+    display: flex;
+    justify-content: space-between;
+    
+    /* This ensures it sticks and is always 100% width of the centered body */
+    position: sticky;
+    top: 0; 
+    z-index: 100;
+    
+    /* FIX: Initial state is transparent, but visible */
+    background-color: rgba(255, 255, 255, 0); 
+    box-shadow: 1 1 1 rgba(0, 0, 0, 0); 
+    
+    padding: 15px 20px;
+    
+    /* Smooth transition for the fade/slide effect */
+    transition: background-color 0.5s ease-in-out, 
+                box-shadow 0.5s ease-in-out,
+                backdrop-filter 0.5s ease-in-out;
+}
+
+/* 3. STICKY NAV - Scrolled/Glass Box State (Fades in using opacity/transition) */
+.header.scrolled {
+    /* When scrolled, apply glass background */
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+    
+    /* Slight shadow to lift it */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 .hero {
     background-image: url("./images/BG.png");
     background-repeat: no-repeat;
@@ -198,3 +255,4 @@ nav {
     display: flex;
     gap: 1em;
 }
+
