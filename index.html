@@ -125,6 +125,27 @@ consectetur, adipisci velit..."
    </div>    
   </div>
 </body>
+    <script>
+        const header = document.querySelector('.header');
+        const hero = document.querySelector('.hero');
+
+        const observer = new IntersectionObserver( 
+            ([entry]) => {
+                if (entry.isIntersecting && entry.intersectionRatio > 0) {
+                    header.classList.remove('scrolled');
+                } else {
+                    header.classList.add('scrolled');
+                }
+            }, 
+            { 
+                rootMargin: '-150px 0px 0px 0px', 
+                threshold: 0
+            }
+        );
+
+        observer.observe(hero);
+    </script>
 </html>
+
 
 
