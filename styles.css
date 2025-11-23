@@ -1,95 +1,34 @@
-/* FIX 1: CSS Reset and Smooth Scroll */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Phudu:wght@300..900;1,300..900&display=swap');
-
-html, body {
-    /* FIX: The ultimate fix for the white space at the top */
-    margin: 0;
-    padding: 0;
-    
-    /* Smooth scrolling for all anchor links */
-    scroll-behavior: smooth; 
-}
-
-/* Base body styles */
-body {
-    box-sizing: border-box;
-    min-width: 360px;
-    max-width: 430px;
-    margin: 0 auto; 
-    font-family: 'Phudu', cursive;
-}
-
-/* Font styles moved from inline HTML <style> */
-.slogan p, #about p, p {
-    font-family: 'lora', serif;
-    font-style: italic;
-    font-size: 14px;
-}
-
-/* 2. STICKY NAV - Floating Initial State (on the Hero Section) */
-.header {
-    display: flex;
-    justify-content: space-between;
-    
-    /* This ensures it sticks and is always 100% width of the centered body */
-    position: sticky;
-    top: 0; 
-    z-index: 100;
-    
-    /* FIX: Initial state is transparent, but visible */
-    background-color: rgba(255, 255, 255, 0); 
-    box-shadow: 1 1 1 rgba(0, 0, 0, 0); 
-    
-    padding: 15px 20px;
-    
-    /* Smooth transition for the fade/slide effect */
-    transition: background-color 0.5s ease-in-out, 
-                box-shadow 0.5s ease-in-out,
-                backdrop-filter 0.5s ease-in-out;
-}
-
-/* 3. STICKY NAV - Scrolled/Glass Box State (Fades in using opacity/transition) */
-.header.scrolled {
-    /* When scrolled, apply glass background */
-    background-color: rgba(255, 255, 255, 0.3); 
-    backdrop-filter: blur(5px); 
-    -webkit-backdrop-filter: blur(5px); 
-    
-    /* Slight shadow to lift it */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
 .hero {
     background-image: url("./images/BG.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 100% 100%; 
-    
-    /* ADDED: Top padding to push content down and prevent hiding behind the sticky header. */
-    padding: 80px 20px 0px; 
-    height: 472px; 
+    padding: 20px 20px 0px;
+    height: 472px;
     margin-bottom: -2px;
-    margin-top: -55px
 }
-/* CLEANUP: CSS for removed inline styles in HTML */
-.about-us-header, .p1-container {
-    display: flex; 
-    justify-content: end;
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    min-width: 360px;
+    max-width: 430px;
+    
 }
-.map-container {
-    display: flex; 
-    justify-content: center;
+.header {
+    display: flex;
+    justify-content: space-between;
+    /* position: sticky; */
 }
-
-/* The rest of your original CSS */
 nav a {
   text-decoration: none;
   color: #113a1f;
+  /* position: sticky; */
 }
 nav {
-    margin-top: 1px;
+    margin-top: -6px;
     display: flex;
-    gap: 25px;
+    gap: 20px;
 }
 .slogan {
     margin-top: 55px;
@@ -100,10 +39,9 @@ nav {
 #logo img {
     width: 71.7px;
     height: auto;
-    margin-top: 2px
 }
 .cover {
-    display: flex;
+        display: flex;
     justify-content: center;
     margin: 20px auto;
 }
@@ -129,11 +67,12 @@ nav {
   background-size: 100% 100%;
   padding: 0 20px;
   margin-top: 0;
-}
 
+}
 #about h2 {
     color: #faf9dd;
     letter-spacing: 5px;
+    /*justify-self: end;*/
     text-align: right;
     padding-top: 19px;
 
@@ -245,13 +184,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #143a20ef; 
-    /* filter:  blur(5px); */
-    position: sticky;
-    bottom: 0;
-    z-index: 3;
-    box-shadow: 0 -3px 20px 3px #888;
-    
+    background-color: #143a20;
 }
 #logo2 {
     width: 71px;
