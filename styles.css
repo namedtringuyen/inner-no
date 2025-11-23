@@ -180,7 +180,7 @@ nav {
     letter-spacing: 5px;
     margin: 0;
     margin-bottom: 20px;
-    color: #143a20;
+    text-color: #143a20;
        
 }
 .gallery-p {
@@ -256,5 +256,6 @@ nav {
     display: flex;
     gap: 1em;
 }
+
 
 
