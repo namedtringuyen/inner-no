@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner Garden</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div id="logo">
+            <img src="./images/Logo.png">
+        </div>
+        <nav>
+            <a href="#about">about</a>
+            <a href="#gallery-title">gallery</a>
+            <a href="#contact">contact</a>
+        </nav>
+    </div>
+
+   <div class="hero">
+        <div class="slogan">
+            <p>"Neque porro quisquam est qui dolorem
+ipsum quia dolor sit amet,
+consectetur, adipisci velit..."</p>
+        </div>
+        <div class="cover">
+           <img src="./images/Cover.png">
+        </div>
+        <div class="tagline">
+            <img src="./images/Tagline.png">
+        </div>
+   </div> 
+   <div id="about">
+      <div class="about-us-header"><h2>about us</h2></div>
+      <div class="p1-container"> <p class="p1">Lorem Ipsum is simply dummy text of
+the printing and typesetting industry.
+Lorem Ipsum has been the industry's
+standard dummy text ever
+to make a type specimen book.</p></div>
+      <p class="p2">It has survived not only five
+centuries, but also the leap into electronic typesetting,
+remaining essentially unchanged.
+It was popularised in the 1960s with the release of Letraset
+sheets containing Lorem Ipsum passages,
+and more recently with desktop.</p>
+     <div class="about-img">
+        <img src="./images/sublogo.png">
+    </div>
+   </div> 
+     
+     <div class="about-to-gallery"></div>
+     <h2 id="gallery-title">gallery</h2>
+     <p class="gallery-p">
+        "Neque porro quisquam est qui dolorem
+ipsum quia dolor sit amet,
+consectetur, adipisci velit..."
+     </p>
+     <div class="gallery">
+        <div class="column column1">
+          <img src="./images/gallery/(1).jpg">
+          <img src="./images/gallery/(2).jpg">
+          <img src="./images/gallery/(3).jpg">
+          <img src="./images/gallery/(4).jpg">
+          <img src="./images/gallery/(5).jpg">
+          <img src="./images/gallery/(6).jpg">
+          <img src="./images/gallery/(7).jpg">
+          <img src="./images/gallery/(8).jpg">
+          <img src="./images/gallery/(9).jpg">
+          <img src="./images/gallery/(10).jpg">
+        </div>
+        <div class="column column2">
+          <img src="./images/gallery/(11).jpg">
+          <img src="./images/gallery/(12).jpg">
+          <img src="./images/gallery/(13).jpg">
+          <img src="./images/gallery/(14).jpg">
+          <img src="./images/gallery/(15).jpg">
+          <img src="./images/gallery/(6).jpg">
+          <img src="./images/gallery/(7).jpg">
+          <img src="./images/gallery/(8).jpg">
+          <img src="./images/gallery/(9).jpg">
+          <img src="./images/gallery/(10).jpg">
+        </div>
+     </div> 
+     <p class="gallery-p" id="margin-top-30">
+        opularised in the 1960s with
+    </p>
+     <div class="breakline">
+        <img src="./images/breakline/breakline.png">
+     </div>
+     <div id="contact" class="contact">
+       <h2 id="contact-title">contact us</h2>
+       <p>phone: <a href="tel:0924085100">0924 085 100</a></p>
+       <p>email: <a href="mailto:thangNo@email.com">thangNo@email.com</a></p>
+       <p>address: cho Da Lat</p>
+       <div class="map-container"><div class="map">
+       <iframe style="margin: 0 auto; border: 5px solid #143a20; border-radius: 5px;" width="320" height="150"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4030.5143613197633!2d108.43233654479415!3d11.943386406494863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3171132f2e1270db%3A0xe3a43c8055615f9!2zY2jhu6MgxJDDoCBM4bqhdCwgUGjGsOG7nW5nIDEsIMSQw6AgTOG6oXQsIEzDom0gxJDhu5NuZywgVmnhu4d0IE5hbQ!5e1!3m2!1svi!2s!4v1763570283525!5m2!1svi!2s" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+       </div></div>
+     </div> 
+   <div class="footer">
+    <img id="logo2" src="./images/logo2/Asset 24@4x.png">
+    <div class="icon-space">
+        <img class="icon" src="./images/icons/Asset 20@4x.png">
+        <img class="icon" src="./images/icons/Asset 21@4x.png">
+        <img class="icon" src="./images/icons/Asset 22@4x.png">
+        <img class="icon" src="./images/icons/Asset 23@4x.png">
+   </div>    
+  </div>
+
+    <script>
+        const header = document.querySelector('.header');
+        const hero = document.querySelector('.hero');
+
+        const observer = new IntersectionObserver( 
+            ([entry]) => {
+                if (entry.isIntersecting && entry.intersectionRatio > 0) {
+                    header.classList.remove('scrolled');
+                } else {
+                    header.classList.add('scrolled');
+                }
+            }, 
+            { 
+                rootMargin: '-150px 0px 0px 0px', 
+                threshold: 0
+            }
+        );
+
+        observer.observe(hero);
+    </script>
+</body>
+</html>

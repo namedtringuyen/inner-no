@@ -1,0 +1,267 @@
+/* FIX 1: CSS Reset and Smooth Scroll */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Phudu:wght@300..900;1,300..900&display=swap');
+
+html, body {
+    /* FIX: The ultimate fix for the white space at the top */
+    margin: 0;
+    padding: 0;
+    
+    /* Smooth scrolling for all anchor links */
+    scroll-behavior: smooth; 
+}
+
+/* Base body styles */
+body {
+    box-sizing: border-box;
+    min-width: 360px;
+    max-width: 430px;
+    margin: 0 auto; 
+    font-family: 'Phudu', cursive;
+}
+
+/* Font styles moved from inline HTML <style> */
+.slogan p, #about p, p {
+    font-family: 'lora', serif;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* 2. STICKY NAV - Floating Initial State (on the Hero Section) */
+.header {
+    display: flex;
+    justify-content: space-between;
+    
+    /* This ensures it sticks and is always 100% width of the centered body */
+    position: sticky;
+    top: 0; 
+    z-index: 100;
+    
+    /* FIX: Initial state is transparent, but visible */
+    background-color: rgba(255, 255, 255, 0); 
+    box-shadow: 1 1 1 rgba(0, 0, 0, 0); 
+    
+    padding: 15px 20px;
+    
+    /* Smooth transition for the fade/slide effect */
+    transition: background-color 0.5s ease-in-out, 
+                box-shadow 0.5s ease-in-out,
+                backdrop-filter 0.5s ease-in-out;
+}
+
+/* 3. STICKY NAV - Scrolled/Glass Box State (Fades in using opacity/transition) */
+.header.scrolled {
+    /* When scrolled, apply glass background */
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+    
+    /* Slight shadow to lift it */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hero {
+    background-image: url("./images/BG.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 100%; 
+    
+    /* ADDED: Top padding to push content down and prevent hiding behind the sticky header. */
+    padding: 80px 20px 0px; 
+    height: 472px; 
+    margin-bottom: -2px;
+    margin-top: -55px
+}
+/* CLEANUP: CSS for removed inline styles in HTML */
+.about-us-header, .p1-container {
+    display: flex; 
+    justify-content: end;
+}
+.map-container {
+    display: flex; 
+    justify-content: center;
+}
+
+/* The rest of your original CSS */
+nav a {
+  text-decoration: none;
+  color: #113a1f;
+}
+nav {
+    margin-top: 1px;
+    display: flex;
+    gap: 25px;
+}
+.slogan {
+    margin-top: 55px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 0 18%;
+}
+#logo img {
+    width: 71.7px;
+    height: auto;
+    margin-top: 2px
+}
+.cover {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+.cover img {
+    height: 196px;
+    width: 215px;
+}
+.tagline {
+    display: flex;
+    justify-content: center;
+}
+.tagline img {
+    width: 266px;
+    height: 50px;
+   
+}
+
+#about {
+  background-image: url('./images/background/Asset\ 19@4x.png');
+  height: 380px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0 20px;
+  margin-top: 0;
+}
+
+#about h2 {
+    color: #faf9dd;
+    letter-spacing: 5px;
+    text-align: right;
+    padding-top: 19px;
+
+    margin: 0;
+}
+#about .p1 {
+    color: #faf9dd;
+    text-align: right;
+    width: 290px;
+    justify-self: end;
+}
+#about .p2 {
+    color: #faf9dd;
+    width: 320px;
+}
+#about .about-img {
+    display: flex;
+    justify-content: center;
+}
+#about .about-img img {
+    width: 40px;
+    height: 65px;
+    margin-top: 25px;
+}
+.about-to-gallery {
+    width: 100%;
+    height: 73.5px;
+    background: linear-gradient(to bottom, #143a20, #fff);
+    
+}
+.gallery {
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    gap: 5px;
+}
+.column {
+  width: 50%;
+}
+.column img {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1.5px;
+    transition: all 0.2s;
+}
+#gallery-title {
+    text-align: center;
+    letter-spacing: 5px;
+    margin: 0;
+    margin-bottom: 20px;
+       
+}
+.gallery-p {
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0 23%;
+    height: 4.5em;
+    text-align: center;
+
+}
+.gallery > .column1 > img:hover {
+    transform: scale(0.95);
+    box-shadow: 0 0 2px 2px #143a20;
+}
+.gallery > .column2 > img:hover {
+    transform: scale(0.95);
+    box-shadow: 0 0 2px 2px #143a20;
+}
+#margin-top-30 {
+    margin-top: 30px;
+}
+
+.breakline img {
+    width: 60%;
+    display: block;
+    margin: 30px auto 45px;
+}
+.contact {
+    background-image: url("./images/background/Asset\ 18@4x.png");
+    background-size: 100% 100%;
+    height: 410px;
+}
+#contact-title {
+    margin: 0;
+    text-align: center;
+    color: #143a20;
+}
+.contact p {
+    text-align: center;
+    color: #113a1f;
+}
+.contact a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+.contact a:hover, .contact a:active, .contact a:visited {
+    cursor: pointer;
+    color: #143a20;
+}
+.map {
+    display: block;
+    justify-self: center;
+    padding: 0 auto;
+}
+.footer {
+    padding: 0 20px;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #143a20ef; 
+    /* filter:  blur(5px); */
+    position: sticky;
+    bottom: 0;
+    z-index: 3;
+    box-shadow: 0 -3px 20px 3px #888;
+    
+}
+#logo2 {
+    width: 71px;
+    height: 20px;
+}
+.icon {
+    height: 20px;
+    width: auto;
+}
+.icon-space {
+    display: flex;
+    gap: 1em;
+}
